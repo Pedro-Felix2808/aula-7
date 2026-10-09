@@ -124,9 +124,9 @@ while True:
    print("1 - Pesquisa por usúario")
    print("2 - Pesquisa por prioridade")
    print("3 - Pesquisa por status")
-   print("4 - Chamados urgentes (critico e abertos)")
+   print("4 - Chamados urgentes")
    print("5 - Abrir chamado")
-   print("6 - Resolver chamado (colocar ele na opcao em progresso)")
+   print("6 - Resolver chamado")
    print("7 - Fechar chamado")
    print("0 - sair")
 
