@@ -77,11 +77,12 @@ def urgentes():
             print(chamado)       
 
 def criar():
-    id = input("Digite o seu id: ")          
+    id = chamados[-1]["id"]          
     titulo = input("Digite o titulo do seu problema: ")
     prioridade = input("Digite a prioridade do seu projeto(Baixa,Média,Alta,Crítica): ") 
     status = input("Digite o status(Aberto, Em progresso, Fechado): ") 
-    usuario = input("Digite o nome do usuario: ")  
+    usuario = input("Digite o nome do usuario: ")
+    id += 1 
 
     novo_chamado = {
         "id": id,
