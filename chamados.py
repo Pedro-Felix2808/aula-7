@@ -74,7 +74,44 @@ def status():
 def urgentes():
     for chamado in chamados:
         if chamado["prioridade"] == "Crítica" and chamado["status"] == "Aberto":
-            print(chamado)                              
+            print(chamado)       
+
+def criar():
+    id = input("Digite o seu id: ")          
+    titulo = input("Digite o titulo do seu problema: ")
+    prioridade = input("Digite a prioridade do seu projeto(Baixa,Média,Alta,Crítica): ") 
+    status = input("Digite o status(Aberto, Em progresso, Fechado): ") 
+    usuario = input("Digite o nome do usuario: ")  
+
+    novo_chamado = {
+        "id": id,
+        "titulo": titulo,
+        "prioridade": prioridade,
+        "status": status,
+        "usuario": usuario
+    }   
+
+    chamados.append(novo_chamado)  
+    print(novo_chamado) 
+
+
+
+def resolver():
+    resolve = input("Digite o usuario do chamado que deseja resolver: ")
+    for chamado in chamados:
+        if chamado["usuario"] == resolve:
+            chamado["status"] = "Em progresso"
+            print(chamado)
+
+
+def fechar():
+    fecha = input("Digite o usuario do chamado que deseja fechar: ")
+    for chamado in chamados:
+        if chamado["usuario"] == fecha:
+            chamados.remove(chamado)
+            break
+    print(chamados)                   
+
 
 
 
@@ -108,13 +145,13 @@ while True:
        urgentes()
 
    elif opcao == "5":
-       cadastrar()
+       criar()
 
    elif opcao == "6":
-       finalizar()   
+       resolver()   
 
    elif opcao == "7":
-       remover()
+       fechar()
 
    elif opcao == "0":
     print("Saindo do sistema...")
